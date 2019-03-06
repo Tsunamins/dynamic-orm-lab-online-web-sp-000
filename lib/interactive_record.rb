@@ -59,7 +59,7 @@ def self.find_by_name(name)
 end
 
 def self.find_by(some_attribute)
-  sql = "SELECT * FROM #{self.table_name} WHERE '#{some_attribute}' = ?"
+  sql = "SELECT * FROM #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}' LIMIT 1"
   DB[:conn].execute(sql)
 end
 
