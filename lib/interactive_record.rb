@@ -62,7 +62,7 @@ def self.find_by(some_attribute)
  
   if some_attribute.class == Integer 
     
-    sql = "SELECT * from #{self.table_name} WHERE '?' = #{some_attribute}"
+    sql = "SELECT * from #{self.table_name} WHERE #{some_attribute} = #{some_attribute}"
   DB[:conn].execute(sql)
 else
   sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}'"
