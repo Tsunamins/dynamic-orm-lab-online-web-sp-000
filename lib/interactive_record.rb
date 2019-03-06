@@ -66,7 +66,7 @@ def self.find_by(some_attribute)
     
    
 else
-   sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = #{some_attribute}"
+   sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}'"
   DB[:conn].execute(sql)
   
 end
