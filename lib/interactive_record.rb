@@ -59,18 +59,8 @@ def self.find_by_name(name)
 end
 
 def self.find_by(some_attribute)
- 
-  if some_attribute.class == String 
-    sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}'"
+  sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}'"
   DB[:conn].execute(sql)
-    
-   
-else
-   sql = "SELECT * from #{self.table_name} WHERE '#{some_attribute}' = '#{some_attribute}'"
-  DB[:conn].execute(sql)
-  
-end
-
 end
 
 end 
