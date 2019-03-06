@@ -59,8 +59,9 @@ def self.find_by_name(name)
 end
 
 def self.find_by(some_attribute)
+  binding.pry
   if some_attribute.class == Integer 
-    binding.pry
+    
     sql = "SELECT * from #{self.table_name} WHERE '?' = #{some_attribute}"
   DB[:conn].execute(sql, some_attribute)
 else
